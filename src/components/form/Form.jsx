@@ -1,39 +1,26 @@
 import React, { useState } from 'react';
-import {
-  StyleSheet,
-  TextInput,
-  View,
-  KeyboardAvoidingView,
-} from 'react-native';
-const Form = ({ controlHeightRegisterBlock }) => {
+import { StyleSheet, TextInput, View } from 'react-native';
+const Form = () => {
   const [name, useName] = useState('');
   const [number, useNumber] = useState('');
   const [email, useEmail] = useState('');
   return (
-    <KeyboardAvoidingView behavior="height" enabled>
-      <View>
-        <TextInput
-          style={styles.input}
-          name="name"
-          value={name}
-          onFocus={() => controlHeightRegisterBlock(true)}
-        />
-        <TextInput
-          style={styles.input}
-          name="number"
-          value={number}
-          placeholder="useless placeholder"
-          keyboardType="numeric"
-        />
-        <TextInput
-          style={styles.input}
-          name="email"
-          value={email}
-          placeholder="useless placeholder"
-          keyboardType="email"
-        />
-      </View>
-    </KeyboardAvoidingView>
+    <View>
+      <TextInput style={styles.input} name="name" value={name} />
+      <TextInput
+        style={styles.input}
+        name="number"
+        value={number}
+        placeholder="useless placeholder"
+        keyboardType="numeric"
+      />
+      <TextInput
+        style={styles.input}
+        name="email"
+        value={email}
+        placeholder="useless placeholder"
+      />
+    </View>
   );
 };
 const styles = StyleSheet.create({
